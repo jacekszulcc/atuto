@@ -11,6 +11,15 @@ export default function Home() {
         <p className="rounded-full border border-zinc-200 px-4 py-1.5 text-sm text-zinc-500 dark:border-zinc-800 dark:text-zinc-400">
           Już wkrótce
         </p>
+        <p className="mt-8 text-sm text-zinc-500 dark:text-zinc-400">
+          Kontakt:{" "}
+          <a
+            href="mailto:kontakt@atuto.pl"
+            className="font-medium text-zinc-700 underline underline-offset-4 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-50"
+          >
+            kontakt@atuto.pl
+          </a>
+        </p>
       </main>
     </div>
   );
