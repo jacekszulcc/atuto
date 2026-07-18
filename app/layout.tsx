@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Atuto — już wkrótce",
-  description: "Atuto — dokumentacja firmowa dla mikro i małych firm. Już wkrótce.",
+  title: "Atuto — dokumentacja BHP dla biura i e-commerce",
+  description:
+    "Pakiet Atuto Start: komplet dokumentacji BHP dla mikro i małych firm. Wypełniasz ankietę online, w 48 h otrzymujesz dokumenty przygotowane przez specjalistę ds. BHP.",
 };
 
 export default function RootLayout({
