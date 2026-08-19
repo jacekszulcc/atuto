@@ -3,7 +3,7 @@
 import { serverClient, testUserId } from "@/lib/supabase";
 import { validateForm } from "./validation";
 import {
-  LEGAL_BASIS,
+  SNAPSHOT_LEGAL_BASIS,
   SNAPSHOT_VERSION,
   type ReferralFormData,
   type ReferralSnapshot,
@@ -53,7 +53,7 @@ function buildSnapshot(
 
   return {
     schemaVersion: SNAPSHOT_VERSION,
-    legalBasis: LEGAL_BASIS,
+    legalBasis: SNAPSHOT_LEGAL_BASIS,
     employer,
     person: {
       fullName: data.fullName.trim(),

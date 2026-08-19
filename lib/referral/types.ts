@@ -100,6 +100,16 @@ export const SNAPSHOT_VERSION = 1 as const;
 export const LEGAL_BASIS =
   "Załącznik nr 3a do rozporządzenia Ministra Zdrowia (Dz.U. 2023 poz. 607)";
 
+/**
+ * Klauzula prawna zapisywana w `dane.legalBasis` przy wystawieniu dokumentu.
+ * Wydruk (SkierowanieWydruk) ma to zdanie na stałe w komponencie i go stąd
+ * nie czyta — stała istnieje wyłącznie po to, żeby snapshot niósł tę samą
+ * treść co ówczesny wydruk.
+ */
+export const SNAPSHOT_LEGAL_BASIS =
+  "Działając na podstawie art. 229 § 4a ustawy z dnia 26 czerwca 1974 r. " +
+  "– Kodeks pracy (Dz. U. z 2016 r. poz. 1666), kieruję na badania lekarskie:";
+
 export interface AddressSnapshot {
   city: string;
   street: string | null;
@@ -115,7 +125,11 @@ export interface FactorSnapshot {
 
 export interface ReferralSnapshot {
   schemaVersion: typeof SNAPSHOT_VERSION;
-  /** Legal basis of the printed template, captured with the document. */
+  /**
+   * Pole zachowane dla zgodności snapshotów — nieużywane przy renderze.
+   * SkierowanieWydruk ma tę klauzulę prawną na stałe w komponencie, nie
+   * czyta jej z tego pola.
+   */
   legalBasis: string;
   employer: {
     name: string;
