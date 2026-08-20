@@ -3,6 +3,7 @@ import { getDocument } from "@/lib/referral/get-document";
 import { renderDocumentHtml } from "@/lib/pdf/render-document";
 import { renderPdf } from "@/lib/pdf/render";
 import { isValidEmail, sendReferralEmail } from "@/lib/email/send-referral";
+import { checkSendLimit, clientIp } from "@/lib/email/rate-limit";
 
 // @sparticuz/chromium wymaga pełnego Node.js (fs, child_process) — nie edge.
 export const runtime = "nodejs";
@@ -33,6 +34,14 @@ export async function POST(
       { error: "Podaj poprawny adres e-mail odbiorcy." },
       { status: 400 },
     );
+  }
+
+  // Limit sprawdzany po walidacji adresu, a przed jakąkolwiek kosztowną pracą:
+  // literówka w mailu nie zjada wtedy limitu, a nadużycie i tak zatrzymuje się
+  // przed generowaniem PDF-a i wywołaniem Resend.
+  const limit = checkSendLimit(clientIp(request.headers));
+  if (!limit.allowed) {
+    return NextResponse.json({ error: limit.message }, { status: 429 });
   }
 
   const result = await getDocument(id);
