@@ -87,7 +87,7 @@ function buildSnapshot(
  *
  * UWAGA — rozjazd ze schematem, świadomie zostawiony: numerujemy w ramach
  * firmy, ale w bazie `dokumenty.numer` jest unikalny GLOBALNIE
- * (`numer text not null unique`). Przy jednej firmie Fazy 1 to bez znaczenia;
+ * (`numer text not null unique`). Dopóki firma jest jedna, to bez znaczenia;
  * druga firma wyliczyłaby własne SK-001 i zapis odbiłby się bezpowrotnie.
  * Decyzja: ograniczenie zmieniamy na `unique (firma_id, numer)` dopiero przy
  * wdrożeniu Supabase Auth, razem z resztą warstwy wielofirmowej.

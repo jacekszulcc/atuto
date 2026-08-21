@@ -4,7 +4,7 @@ import { createClient, type SupabaseClient } from "@supabase/supabase-js";
  * Server-side Supabase client.
  *
  * Używa klucza service_role, który POMIJA polityki RLS. Powód: tabele mają
- * RLS oparty o auth.uid(), a Faza 1 nie ma logowania — zapytanie z kluczem
+ * RLS oparty o auth.uid(), a aplikacja nie ma jeszcze logowania — zapytanie z kluczem
  * anonimowym zostałoby przez RLS odrzucone. Dlatego zapis biegnie wyłącznie
  * w Server Action, a klucz nigdy nie trafia do przeglądarki (brak prefiksu
  * NEXT_PUBLIC_). Po wprowadzeniu Supabase Auth ten moduł zastąpi klient

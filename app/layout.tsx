@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Atuto — dokumentacja BHP dla biura i e-commerce",
+  title: "Atuto — generowanie dokumentacji firmowej",
   description:
-    "Pakiet Atuto Start: komplet dokumentacji BHP dla mikro i małych firm. Wypełniasz ankietę online, w 48 h otrzymujesz dokumenty przygotowane przez specjalistę ds. BHP.",
+    "Projekt własny: aplikacja generująca obowiązkową dokumentację firmową z formularza — od danych przez PDF po wysyłkę mailem. Pierwszy wdrożony typ dokumentu: skierowanie na badania lekarskie wg załącznika 3a (Dz.U. 2023 poz. 607). Demo otwarte, dane fikcyjne.",
 };
 
 export default function RootLayout({
