@@ -17,6 +17,9 @@ RODO, HACCP). Obecna wersja implementuje jeden typ dokumentu jako kompletną
 
 Demo jest otwarte, bez logowania, a wszystkie dane w nim są fikcyjne.
 
+Opis problemu, procesu przed i po wdrożeniu oraz tego, co poszło nie tak
+w trakcie budowy: [CASE-STUDY.md](CASE-STUDY.md).
+
 ## Problem
 
 Skierowanie na badania wypełnia się dziś zwykle ręcznie, na druku pobranym
